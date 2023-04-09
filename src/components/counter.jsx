@@ -9,6 +9,7 @@ class Counter extends Component {
             //get data from server through an ajax call
         }
     }
+    componentWillUnmount(){console.log("counter - unmounted");}
   handleIncrement = () => {
     this.setState({ value: this.state.value + 1 });
   };
