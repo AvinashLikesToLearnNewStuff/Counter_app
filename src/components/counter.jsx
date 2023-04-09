@@ -2,6 +2,13 @@ import React, { Component } from "react";
 
 class Counter extends Component {
 
+    componentDidUpdate(previousProps, previousState){
+        console.log('previousProps',previousProps);
+        console.log('previousState',previousState);
+        if(previousProps.counter.value!==this.props.counter.value){
+            //get data from server through an ajax call
+        }
+    }
   handleIncrement = () => {
     this.setState({ value: this.state.value + 1 });
   };
@@ -11,6 +18,7 @@ class Counter extends Component {
   };
 
   render() {
+      console.log('Counter-rendered');
     return (
       <div>
         {this.props.children}
